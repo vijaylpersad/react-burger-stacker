@@ -9,11 +9,11 @@ Here is a rough wireframe of the general layout:
 ___
 ## User Stories
 
-* As a user (AAU), I want to see all available burger ingredients listed on the left side.
-* AAU, I want the ability to add any ingredient onto the burger stack using a button.
-* AAU, I want to see each ingredient I select added to the top of the burger stack on the right side.
-* AAU, I want the ability to clear the burger stack so I can start again.
-* AAU, I want to be able to add as many ingredients of any type as I want (ingredients don't go away.)
+* As a user, I want to see all available burger ingredients listed on the left side.
+* I want the ability to add any ingredient onto the burger stack using a button.
+* I want to see each ingredient I select added to the top of the burger stack on the right side.
+* I want the ability to clear the burger stack so I can start again.
+* I want to be able to add as many ingredients of any type as I want (ingredients don't go away.)
 
 ___
 ## Suggested Ways To Get Started
@@ -40,17 +40,6 @@ App
 |  |  |--Ingredient(s)
 |  |
 |  |--ClearBurger
-```
-
-### Suggested state:
-
-You have a set of ingredients that people can choose and you have ingredients that people have added to the burger stack. A simple way to represent this would be with two arrays in state:
-
-```js
-this.state = {
-  ingredients: [],
-  stack: []
-}
 ```
 
 ### Notes:
