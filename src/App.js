@@ -23,7 +23,6 @@ class App extends Component {
   }
 
   addToBurger = (e) => {
-    console.log("THIS RAN")
     let currentBurger = this.state.burgerIngredients
     currentBurger.push(e.target.innerText)
 
@@ -37,7 +36,6 @@ class App extends Component {
       <div>
         <IngredientList ingredients={ingredients} addToBurger={this.addToBurger} />
         <BurgerPane />
-        {this.state.burgerIngredients}
       </div>
     )
   }
