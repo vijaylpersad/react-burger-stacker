@@ -27,3 +27,8 @@ Rendering BurgerPane:
 - Pass down my function to clear BurgerIngredients to BurgerPane
 - In BurgerPane renders ClearBurger component and passes it a function to clear BurgerIngredients
 - Declare a component called ClearBurger that onClick runs function to clear BurgerIngredients
+
+// TO FIX AFTER LUNCH:
+- Finish writing all functionality for ClearBurger
+- Fix bug with onClick in Ingredient
+- Add color styling to new burgerIngredient array items
