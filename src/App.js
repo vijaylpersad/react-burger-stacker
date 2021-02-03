@@ -18,7 +18,18 @@ const ingredients = [
 ]
 
 class App extends Component {
-  // btw adding data, prop handling, state, functions, etc.
+  state = {
+    burgerIngredients: []
+  }
+
+  addToBurger = (e) => {
+    let currentBurger = this.state.burgerIngredients
+    currentBurger.push(e.target.innerText)
+
+    this.setState({
+      burgerIngredients: currentBurger
+    })
+  }
 
   render() {
     return (
