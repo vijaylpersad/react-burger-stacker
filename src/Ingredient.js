@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 class Ingredient extends Component {
     render() {
         return (
-            <li>
-                {/* render individual ingredient */}
+            <li backgroundColor={this.props.color} key={this.props.key}>
+                {this.props.ingredient}
             </li>
         )
     }
