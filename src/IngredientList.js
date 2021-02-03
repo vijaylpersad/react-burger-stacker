@@ -4,9 +4,9 @@ import Ingredient from './Ingredient'
 class IngredientList extends Component {
     render() {
         // take array of props and use .map
-        let ingredientComponents = this.props.ingredients.map((item, index) => {
-            <Ingredient ingredient={item.name} color={item.color} key={key`${index}`} />
-        })
+        let ingredientComponents = this.props.ingredients.map((item, index) => (
+            <Ingredient ingredient={item.name} color={item.color} key={`key${index}`} />
+        ))
 
         return (
             <ul>
