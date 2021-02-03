@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div>
         <IngredientList ingredients={ingredients} addToBurger={this.addToBurger} />
-        <BurgerPane />
+        <BurgerPane burgerIngredients={this.state.burgerIngredients} />
       </div>
     )
   }

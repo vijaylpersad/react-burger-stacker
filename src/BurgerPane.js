@@ -8,7 +8,7 @@ class BurgerPane extends Component {
     render() {
         return (
             <div>
-                <BurgerStack />
+                <BurgerStack burgerIngredients={this.props.burgerIngredients} />
                 <ClearBurger />
             </div>
         )
