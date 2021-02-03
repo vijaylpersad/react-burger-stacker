@@ -31,11 +31,17 @@ class App extends Component {
     })
   }
 
+  clearBurger = (e) => {
+    this.setState({
+      burgerIngredients: []
+    })
+  }
+
   render() {
     return (
       <div>
         <IngredientList ingredients={ingredients} addToBurger={this.addToBurger} />
-        <BurgerPane burgerIngredients={this.state.burgerIngredients} />
+        <BurgerPane burgerIngredients={this.state.burgerIngredients} clearBurger={this.clearBurger} />
       </div>
     )
   }
