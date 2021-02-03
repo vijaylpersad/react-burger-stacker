@@ -7,7 +7,7 @@ class BurgerStack extends Component {
         // call .map on our passed props array
         let burgerIngredients = this.props.burgerIngredients.reverse().map((item, index) => (
             <li>
-                <Ingredient ingredient={item} key={`keyB${index}`} />
+                <Ingredient ingredient={item.name} color={item.color} key={`keyB${index}`} />
             </li>
         ))
 

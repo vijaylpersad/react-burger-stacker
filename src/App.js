@@ -24,7 +24,8 @@ class App extends Component {
 
   addToBurger = (e) => {
     let currentBurger = this.state.burgerIngredients
-    currentBurger.push(e.target.innerText)
+    let newIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
+    currentBurger.push(newIngredient)
 
     this.setState({
       burgerIngredients: currentBurger
