@@ -3,11 +3,7 @@ import React, { Component } from 'react'
 class ClearBurger extends Component {
 
     render() {
-        return (
-            <div>
-                <h3>CLEAR BURGER</h3>
-            </div>
-        )
+        return <button onClick={this.props.clear} className="clear-btn">Clear Burger</button>
     }
 }
 

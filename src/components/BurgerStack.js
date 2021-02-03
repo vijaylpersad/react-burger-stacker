@@ -3,7 +3,7 @@ import IngredientList from './IngredientList'
 
 class BurgerStack extends Component {
     render() {
-        let burgerBits = this.props.ingredients.map(ingredient => <IngredientList ingredient={ingredient} />)
+        let burgerBits = this.props.ingredients.map(ingredient => <li><IngredientList ingredient={ingredient} /></li>)
 
         return (
             <div>

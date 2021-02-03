@@ -21,13 +21,31 @@ class BurgerStacker extends Component {
         burgerIngredients: []
     }
 
+    // Add Burger to stack
+    addToStack = (e) => {
+        console.log(e.target)
+        console.log(e.target.style.backgroundColor)
+        console.log(e.target.innerText)
+        this.setState({
+            burgerIngredients: [{name: e.target.innerText, color: e.target.style.backgroundColor}, ...this.state.burgerIngredients]
+        })
+    }
+    
+
+    // Clear Burger stack
+    clearBurger = () => {
+        this.setState({
+            burgerIngredients: []
+        })
+    }
+
     render() {
         return (
             <main>
                 <h1>BurgerStacker</h1>
                 <div className="panes">
-                    <IngredientList ingredients={this.state.ingredients} />
-                    <BurgerPane ingredients={this.state.burgerIngredients} />
+                    <IngredientList ingredients={this.state.ingredients} add={this.addToStack} />
+                    <BurgerPane ingredients={this.state.burgerIngredients} clear={this.clearBurger} />
                 </div>
             </main>
         )   
