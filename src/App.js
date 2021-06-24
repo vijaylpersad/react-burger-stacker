@@ -18,34 +18,37 @@ const ingredients = [
 ]
 
 class App extends Component {
-  state = {
-    burgerIngredients: []
-  }
+	constructor(props){
+		super()
+		this.state = {
+			burgerIngredients: []
+		}
+	}
+	
 
-  addToBurger = (e) => {
-    let currentBurger = this.state.burgerIngredients
-    let newIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
-    currentBurger.push(newIngredient)
+	addToBurger = (e) => {
+		let newIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
+		let newBurger = this.state.burgerIngredients.concat(newIngredient)
 
-    this.setState({
-      burgerIngredients: currentBurger
-    })
-  }
+		this.setState({
+			burgerIngredients: newBurger
+		})
+	}
 
-  clearBurger = (e) => {
-    this.setState({
-      burgerIngredients: []
-    })
-  }
+	clearBurger = (e) => {
+		this.setState({
+			burgerIngredients: []
+		})
+	}
 
-  render() {
-    return (
-      <div style={{display: "flex"}}>
-        <IngredientList ingredients={ingredients} addToBurger={this.addToBurger} />
-        <BurgerPane burgerIngredients={this.state.burgerIngredients} clearBurger={this.clearBurger} />
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div style={{display: "flex", alignItems: "flex-end"}}>
+			<IngredientList ingredients={ingredients} addToBurger={this.addToBurger} />
+			<BurgerPane burgerIngredients={this.state.burgerIngredients} clearBurger={this.clearBurger} />
+			</div>
+		)
+	}
 }
 
 export default App

@@ -6,13 +6,13 @@ class BurgerStack extends Component {
     render() {
         // call .map on our passed props array
         let burgerIngredients = this.props.burgerIngredients.reverse().map((item, index) => (
-            <li>
-                <Ingredient ingredient={item.name} color={item.color} key={`keyB${index}`} />
+            <li key={index}>
+                <Ingredient ingredient={item.name} color={item.color}/>
             </li>
         ))
 
         return (
-            <ul>
+            <ul style={{marginBottom: "1em"}}>
                 {burgerIngredients}
             </ul>
         )
