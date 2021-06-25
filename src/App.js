@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import IngredientList from './IngredientList'
 import BurgerPane from './BurgerPane'
 
-const ingredients = [
+const ingredientData = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
   {name: 'Sesame Bun', color: 'sandybrown'},
   {name: 'Gluten Free Bun', color: 'peru'},
@@ -17,38 +17,31 @@ const ingredients = [
   {name: 'Onion', color: 'lightyellow'}
 ]
 
-class App extends Component {
-	constructor(props){
-		super()
-		this.state = {
-			burgerIngredients: []
-		}
-	}
+const App = () => {
+
+	const [myBurger, setMyBurger] = useState([]);
 	
-
-	addToBurger = (e) => {
-		let newIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
-		let newBurger = this.state.burgerIngredients.concat(newIngredient)
-
-		this.setState({
-			burgerIngredients: newBurger
-		})
+	const addToBurger = (e) => {
+		let newIngredient = {
+			name: e.target.innerText,
+			color: e.target.style.backgroundColor
+		}
+		setMyBurger([
+			...myBurger,
+			newIngredient
+		])
 	}
 
-	clearBurger = (e) => {
-		this.setState({
-			burgerIngredients: []
-		})
+	const clearBurger = () => {
+		setMyBurger([])
 	}
 
-	render() {
-		return (
-			<div style={{display: "flex", alignItems: "flex-end"}}>
-			<IngredientList ingredients={ingredients} addToBurger={this.addToBurger} />
-			<BurgerPane burgerIngredients={this.state.burgerIngredients} clearBurger={this.clearBurger} />
-			</div>
-		)
-	}
+	return (
+		<div style={{display: "flex", alignItems: "flex-end"}}>
+		<IngredientList ingredients={ingredientData} addToBurger={addToBurger} />
+		<BurgerPane burgerIngredients={myBurger} clearBurger={clearBurger} />
+		</div>
+	)
 }
 
 export default App
