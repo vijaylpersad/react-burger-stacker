@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { MouseEvent, useState } from 'react'
 import IngredientList from './IngredientList'
 import BurgerPane from './BurgerPane'
 
@@ -23,8 +23,8 @@ const App = () => {
 
 	const [myBurger, setMyBurger] = useState<ing[]>([]);
 
-	const addToBurger = (e: React.MouseEvent<HTMLElement>) => {
-		const target = e.target as HTMLElement
+	const addToBurger = (e: MouseEvent) => {
+		const target = e.target as HTMLLIElement
 		let newIngredient = {
 			name: target.innerText,
 			color: target.style.backgroundColor
