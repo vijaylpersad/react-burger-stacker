@@ -16,14 +16,14 @@ ___
 * I want to be able to add as many ingredients of any type as I want (ingredients don't go away.)
 
 ___
-## Suggested Ways To Get Started
-
-1. Use `create-react-app` to generate a project called `burger-stacker`.
-2. Go into the newly created directory and open it up in your text editor.
+## How To Get Started
+0. Fork & clone this repository
+1. Cd into this directory and run `npx create-react-app .` to make this directory into a react app.
+2. Open in your code editor.
 3. Clear out the generated code from the `App` component.
-4. Think about what components you need to make.
+4. Draw a component diagram.
 5. Write the static versions of your components.
-6. Layout the component hierarchy (decide which ones are children of others).
+6. Import and nest components so you have your start screen built for the app.
 7. Decide what the state should be.
 8. Decide where the state should live.
 9. Write the handler callbacks that you pass into children to update state.
